@@ -112,11 +112,11 @@
                 </tr>
             </table>
             <div class="pagination">
-                <span class="double-prev" onclick="goToFirstPage()"><<</span>
-                <span class="prev" onclick="goToPreviousPage()"><</span>
-                <span class="page-num" id="currentPage">1</span>
-                <span class="next" onclick="goToNextPage()">></span>
-                <span class="double-next" onclick="goToLastPage()">>></span>
+                <a href="#"><span class="double-next" onclick="goToLastPage()"><img src="img/left_db_arrow.png" alt="#"></span></a>
+                <a href="#"><span class="next" onclick="goToNextPage()"><img src="img/left_arrow.png" alt="arrow"></span></a>
+                <a href="#"><span class="page-num" id="currentPage">1</span></a>
+                <a href="#"><span class="prev" onclick="goToPreviousPage()"><img src="img/right_arrow.png" alt="arrow"></span></a>
+                <a href="#"><span class="double-prev" onclick="goToFirstPage()"><img src="img/right_db_arrow.png" alt="#"></span></a>
             </div>
         </div>
         <div class="writeic">
@@ -154,52 +154,7 @@
     </footer>
     
     <script>
-        function updateOrderStatus(selectElement) {
-        var newStatus = selectElement.value;
-        var confirmation = confirm("주문 상태를 '" + newStatus + "'로 변경하시겠습니까?");
-        
-        if (confirmation) {
-            // 상태 변경 로직 처리
-            alert("주문 상태가 " + newStatus + "로 변경되었습니다.");
-        } else {
-            // 취소 로직 (기존 상태 유지)
-            selectElement.value = previousStatus; // 이전 상태로 복원
-        }
-    }
-    
-    let currentPage = 1;
-    var totalPages = 10; // 예시로 총 10페이지가 있다고 가정
-  
-    function goToFirstPage() {
-      currentPage = 1;
-      updatePage();
-    }
-  
-    function goToPreviousPage() {
-      if (currentPage > 1) {
-        currentPage--;
-        updatePage();
-      } else {
-        alert("이전 페이지가 없습니다.")
-      }
-    }
-  
-    function goToNextPage() {
-      if (currentPage < totalPages) {
-        currentPage++;
-        updatePage();
-      }
-    }
-  
-    function goToLastPage() {
-      currentPage = totalPages;
-      updatePage();
-    }
-  
-    function updatePage() {
-      document.getElementById('currentPage').textContent = currentPage;
-      // 페이지 이동에 따른 추가 로직을 여기에 추가할 수 있습니다 (예: 서버로 요청 보내기).
-    }
+       
   </script>
 </body>
 </html>
